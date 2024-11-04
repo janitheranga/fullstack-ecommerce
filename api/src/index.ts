@@ -1,12 +1,12 @@
 import express from "express";
+import { productsRouter } from "./routes/products";
 
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
+
+app.use("/products", productsRouter);
 
 app.listen(port, () => {
-    console.log("Server started on port 3000");
+    console.log(`Server started on port ${port}`);
 });
